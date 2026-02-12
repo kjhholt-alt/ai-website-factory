@@ -1,0 +1,145 @@
+{
+  "businessName": "Elite Soccer Academy",
+  "tagline": "Where Champions Are Made",
+  "description": "Elite Soccer Academy offers premier youth soccer training camps designed to develop skills, build confidence, and ignite a passion for the beautiful game. Our USSF-licensed coaches bring professional-level training to players of all ages and skill levels.",
+  "logo": {
+    "text": "ESA",
+    "icon": "trophy"
+  },
+  "branding": {
+    "primaryColor": "#16a34a",
+    "secondaryColor": "#0f172a",
+    "accentColor": "#facc15",
+    "font": "Inter"
+  },
+  "contactInfo": {
+    "phone": "(555) 123-4567",
+    "email": "info@elitesocceracademy.com",
+    "address": "1200 Champions Way, Austin, TX 78701",
+    "mapUrl": "https://maps.google.com"
+  },
+  "socialLinks": {
+    "instagram": "https://instagram.com/elitesocceracademy",
+    "facebook": "https://facebook.com/elitesocceracademy",
+    "twitter": "https://twitter.com/elitesoccer",
+    "youtube": "https://youtube.com/@elitesocceracademy"
+  },
+  "pages": {
+    "home": true,
+    "register": true,
+    "schedule": true,
+    "about": true,
+    "contact": true,
+    "admin": true
+  },
+  "services": [
+    {
+      "id": "summer-elite-u10",
+      "name": "Summer Elite Camp - U10",
+      "description": "Intensive skill-building camp for players ages 7-10. Focus on ball control, passing fundamentals, and game awareness through fun drills and small-sided games.",
+      "dates": "June 16 - June 27, 2025",
+      "time": "9:00 AM - 12:00 PM",
+      "ages": "7-10",
+      "skillLevel": "All Levels",
+      "price": 299,
+      "maxCapacity": 24,
+      "location": "Champions Field A"
+    },
+    {
+      "id": "summer-elite-u14",
+      "name": "Summer Elite Camp - U14",
+      "description": "Advanced training camp for players ages 11-14. Tactical development, position-specific training, and competitive match play to prepare for travel and club teams.",
+      "dates": "June 16 - June 27, 2025",
+      "time": "1:00 PM - 4:00 PM",
+      "ages": "11-14",
+      "skillLevel": "Intermediate to Advanced",
+      "price": 349,
+      "maxCapacity": 20,
+      "location": "Champions Field B"
+    },
+    {
+      "id": "goalkeeper-intensive",
+      "name": "Goalkeeper Intensive",
+      "description": "Specialized goalkeeper training with former professional keepers. Diving technique, distribution, positioning, and shot-stopping drills.",
+      "dates": "July 7 - July 11, 2025",
+      "time": "9:00 AM - 1:00 PM",
+      "ages": "9-16",
+      "skillLevel": "All Levels",
+      "price": 249,
+      "maxCapacity": 12,
+      "location": "Champions Field A"
+    },
+    {
+      "id": "fall-skills-clinic",
+      "name": "Fall Skills Clinic",
+      "description": "Weekly evening sessions focused on technical skill development. Perfect for players looking to sharpen their game during the fall season.",
+      "dates": "September 8 - October 17, 2025",
+      "time": "5:30 PM - 7:00 PM",
+      "ages": "8-15",
+      "skillLevel": "All Levels",
+      "price": 199,
+      "maxCapacity": 30,
+      "location": "Champions Field A & B"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Sarah M.",
+      "role": "Parent",
+      "text": "My son attended the summer camp last year and his confidence on the field completely transformed. The coaches are incredible and truly care about each player's development.",
+      "rating": 5
+    },
+    {
+      "name": "Coach Rivera",
+      "role": "Local Club Director",
+      "text": "I've seen players come out of Elite Soccer Academy camps with noticeably improved technical skills. Their coaching methodology is top-tier.",
+      "rating": 5
+    },
+    {
+      "name": "James T.",
+      "role": "Parent",
+      "text": "Both my daughters have attended multiple camps here. The staff creates a welcoming, challenging environment. Worth every penny.",
+      "rating": 5
+    }
+  ],
+  "features": [
+    {
+      "title": "USSF Licensed Coaches",
+      "description": "All our coaches hold USSF licenses and have professional playing or coaching experience.",
+      "icon": "award"
+    },
+    {
+      "title": "Small Group Sizes",
+      "description": "We maintain low player-to-coach ratios to ensure personalized attention for every athlete.",
+      "icon": "users"
+    },
+    {
+      "title": "Age-Appropriate Training",
+      "description": "Curriculum designed specifically for each age group following US Soccer development guidelines.",
+      "icon": "target"
+    },
+    {
+      "title": "Safe & Inclusive",
+      "description": "Background-checked staff, certified athletic trainers on-site, and a welcoming environment for all players.",
+      "icon": "shield-check"
+    }
+  ],
+  "registration": {
+    "enabled": true,
+    "waiverText": "I, the undersigned parent/guardian, hereby grant permission for my child to participate in Elite Soccer Academy programs. I understand that soccer involves inherent risks including but not limited to sprains, fractures, and other injuries. I agree to hold harmless Elite Soccer Academy, its coaches, staff, and volunteers from any claims arising from participation. I confirm that the medical information provided is accurate and authorize emergency medical treatment if needed. I grant permission for my child's likeness to be used in promotional materials. This waiver is valid for the duration of the registered program.",
+    "requiredFields": {
+      "parent": ["firstName", "lastName", "email", "phone", "address", "city", "state", "zip"],
+      "player": ["firstName", "lastName", "dateOfBirth", "age", "gender", "skillLevel", "medicalConditions", "allergies", "medications"],
+      "emergency": ["contactName", "contactPhone", "relationship"]
+    }
+  },
+  "admin": {
+    "password": "admin123",
+    "email": "admin@elitesocceracademy.com"
+  },
+  "seo": {
+    "title": "Elite Soccer Academy | Premier Youth Soccer Camps in Austin, TX",
+    "description": "Top-rated youth soccer training camps in Austin, Texas. USSF-licensed coaches, small group sizes, and age-appropriate curriculum for players ages 7-16.",
+    "keywords": ["soccer camp", "youth soccer", "Austin TX", "soccer training", "kids soccer camp"]
+  }
+}

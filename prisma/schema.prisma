@@ -1,0 +1,83 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Registration {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Camp selection
+  serviceId   String
+  serviceName String
+
+  // Parent/Guardian info
+  parentFirstName String
+  parentLastName  String
+  parentEmail     String
+  parentPhone     String
+  parentAddress   String
+  parentCity      String
+  parentState     String
+  parentZip       String
+
+  // Player info
+  playerFirstName    String
+  playerLastName     String
+  playerDateOfBirth  String
+  playerAge          Int
+  playerGender       String
+  playerSkillLevel   String
+  medicalConditions  String @default("")
+  allergies          String @default("")
+  medications        String @default("")
+
+  // Emergency contact
+  emergencyContactName  String
+  emergencyContactPhone String
+  emergencyRelationship String
+
+  // Status
+  status          String @default("confirmed")
+  paymentStatus   String @default("pending")
+  totalAmount     Float  @default(0)
+
+  // Waiver
+  waiver WaiverSignature?
+
+  @@index([serviceId])
+  @@index([parentEmail])
+  @@index([status])
+}
+
+model WaiverSignature {
+  id             String   @id @default(cuid())
+  createdAt      DateTime @default(now())
+  registrationId String   @unique
+  registration   Registration @relation(fields: [registrationId], references: [id], onDelete: Cascade)
+  signedName     String
+  agreedToTerms  Boolean
+  ipAddress      String   @default("")
+}
+
+model AdminUser {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+}
+
+model Message {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  subject   String
+  body      String
+  sentTo    String
+  sentBy    String
+  status    String   @default("sent")
+}
