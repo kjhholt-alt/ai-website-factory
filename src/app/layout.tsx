@@ -9,9 +9,28 @@ import { Toaster } from "@/components/ui/toaster";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: siteConfig.seo.title,
+  title: {
+    default: siteConfig.seo.title,
+    template: `%s | ${siteConfig.businessName}`,
+  },
   description: siteConfig.seo.description,
   keywords: siteConfig.seo.keywords,
+  openGraph: {
+    title: siteConfig.seo.title,
+    description: siteConfig.seo.description,
+    type: "website",
+    locale: "en_US",
+    siteName: siteConfig.businessName,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.seo.title,
+    description: siteConfig.seo.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
