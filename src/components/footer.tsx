@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Trophy, Mail, Phone, MapPin } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { siteConfig } from "@/lib/site-config";
@@ -11,9 +12,19 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
-                <Trophy className="w-5 h-5 text-primary-foreground" />
-              </div>
+              {siteConfig.logo.image ? (
+                <Image
+                  src={siteConfig.logo.image}
+                  alt={`${siteConfig.businessName} logo`}
+                  width={36}
+                  height={36}
+                  className="w-9 h-9 object-contain"
+                />
+              ) : (
+                <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
+                  <Trophy className="w-5 h-5 text-primary-foreground" />
+                </div>
+              )}
               <span className="text-lg font-bold text-foreground">
                 {siteConfig.businessName}
               </span>
@@ -72,17 +83,34 @@ export function Footer() {
               Contact Us
             </h3>
             <ul className="space-y-3">
-              <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Phone className="w-4 h-4 text-primary" />
-                {siteConfig.contactInfo.phone}
+              <li>
+                <a
+                  href={`tel:${siteConfig.contactInfo.phone}`}
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <Phone className="w-4 h-4 text-primary" />
+                  {siteConfig.contactInfo.phone}
+                </a>
               </li>
-              <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Mail className="w-4 h-4 text-primary" />
-                {siteConfig.contactInfo.email}
+              <li>
+                <a
+                  href={`mailto:${siteConfig.contactInfo.email}`}
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <Mail className="w-4 h-4 text-primary" />
+                  {siteConfig.contactInfo.email}
+                </a>
               </li>
-              <li className="flex items-start gap-2 text-sm text-muted-foreground">
-                <MapPin className="w-4 h-4 text-primary mt-0.5" />
-                {siteConfig.contactInfo.address}
+              <li>
+                <a
+                  href={siteConfig.contactInfo.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <MapPin className="w-4 h-4 text-primary mt-0.5" />
+                  {siteConfig.contactInfo.address}
+                </a>
               </li>
             </ul>
           </div>

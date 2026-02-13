@@ -109,7 +109,7 @@ export function StepParentInfo({ data, onChange, errors }: Props) {
             id="parentCity"
             value={data.parentCity || ""}
             onChange={(e) => onChange({ parentCity: e.target.value })}
-            placeholder="Austin"
+            placeholder="East Moline"
             className={errors.parentCity ? "border-destructive" : ""}
           />
           {errors.parentCity && (
@@ -125,7 +125,7 @@ export function StepParentInfo({ data, onChange, errors }: Props) {
             id="parentState"
             value={data.parentState || ""}
             onChange={(e) => onChange({ parentState: e.target.value })}
-            placeholder="TX"
+            placeholder="IL"
             className={errors.parentState ? "border-destructive" : ""}
           />
           {errors.parentState && (

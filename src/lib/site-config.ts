@@ -26,6 +26,18 @@ export interface Feature {
   icon: string;
 }
 
+export interface Coach {
+  name: string;
+  title: string;
+  bio: string;
+  image: string;
+}
+
+export interface GalleryImage {
+  src: string;
+  alt: string;
+}
+
 export interface SiteConfig {
   businessName: string;
   tagline: string;
@@ -33,6 +45,7 @@ export interface SiteConfig {
   logo: {
     text: string;
     icon: string;
+    image?: string;
   };
   branding: {
     primaryColor: string;
@@ -60,6 +73,8 @@ export interface SiteConfig {
     contact: boolean;
     admin: boolean;
   };
+  coach?: Coach;
+  gallery?: GalleryImage[];
   services: Service[];
   testimonials: Testimonial[];
   features: Feature[];

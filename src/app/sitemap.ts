@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/site-config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://elitesocceracademy.com";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://n16soccertraining.com";
 
   const routes = [
     { url: baseUrl, lastModified: new Date(), priority: 1.0 },

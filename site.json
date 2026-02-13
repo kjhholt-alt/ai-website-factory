@@ -1,28 +1,27 @@
 {
-  "businessName": "Elite Soccer Academy",
-  "tagline": "Where Champions Are Made",
-  "description": "Elite Soccer Academy offers premier youth soccer training camps designed to develop skills, build confidence, and ignite a passion for the beautiful game. Our USSF-licensed coaches bring professional-level training to players of all ages and skill levels.",
+  "businessName": "N16 Soccer Training",
+  "tagline": "Elevate Your Game",
+  "description": "N16 Soccer Training provides elite indoor soccer development for youth athletes of all skill levels. Our personalized coaching approach focuses on technical skills, tactical awareness, and building confidence in a state-of-the-art indoor turf facility in East Moline.",
   "logo": {
-    "text": "ESA",
-    "icon": "trophy"
+    "text": "N16",
+    "icon": "shield",
+    "image": "/images/n16-logo.png"
   },
   "branding": {
-    "primaryColor": "#16a34a",
-    "secondaryColor": "#0f172a",
-    "accentColor": "#facc15",
+    "primaryColor": "#D4A017",
+    "secondaryColor": "#0A0A0A",
+    "accentColor": "#F5C542",
     "font": "Inter"
   },
   "contactInfo": {
-    "phone": "(555) 123-4567",
-    "email": "info@elitesocceracademy.com",
-    "address": "1200 Champions Way, Austin, TX 78701",
-    "mapUrl": "https://maps.google.com"
+    "phone": "(309) 555-0116",
+    "email": "info@n16soccertraining.com",
+    "address": "4113 4th St, Suite E, East Moline, IL 61244",
+    "mapUrl": "https://maps.google.com/?q=4113+4th+St+Suite+E+East+Moline+IL+61244"
   },
   "socialLinks": {
-    "instagram": "https://instagram.com/elitesocceracademy",
-    "facebook": "https://facebook.com/elitesocceracademy",
-    "twitter": "https://twitter.com/elitesoccer",
-    "youtube": "https://youtube.com/@elitesocceracademy"
+    "instagram": "https://instagram.com/n16soccertraining",
+    "facebook": "https://facebook.com/n16soccertraining"
   },
   "pages": {
     "home": true,
@@ -32,101 +31,114 @@
     "contact": true,
     "admin": true
   },
+  "coach": {
+    "name": "Coach",
+    "title": "Head Trainer & Founder",
+    "bio": "With years of competitive soccer experience and a passion for developing young athletes, our head coach brings professional-level training techniques to every session. His approach combines technical skill-building with game intelligence to help players reach their full potential.",
+    "image": "/images/coach-headshot.jpg"
+  },
+  "gallery": [
+    { "src": "/images/team-girls-1.jpg", "alt": "Girls training session at N16 Soccer" },
+    { "src": "/images/team-boys-1.jpg", "alt": "Boys team at N16 indoor facility" },
+    { "src": "/images/team-girls-2.jpg", "alt": "Youth girls group training" },
+    { "src": "/images/team-girls-3.jpg", "alt": "Girls team with coach" },
+    { "src": "/images/team-boys-2.jpg", "alt": "Boys group training session" }
+  ],
   "services": [
     {
-      "id": "summer-elite-u10",
-      "name": "Summer Elite Camp - U10",
-      "description": "Intensive skill-building camp for players ages 7-10. Focus on ball control, passing fundamentals, and game awareness through fun drills and small-sided games.",
-      "dates": "June 16 - June 27, 2025",
-      "time": "9:00 AM - 12:00 PM",
-      "ages": "7-10",
+      "id": "youth-skills-u10",
+      "name": "Youth Skills Development - U10",
+      "description": "Foundation-building program for players ages 6-10. Focus on ball mastery, first touch, passing technique, and love for the game through fun, engaging drills and small-sided games on our indoor turf.",
+      "dates": "March 3 - April 11, 2025",
+      "time": "5:00 PM - 6:30 PM",
+      "ages": "6-10",
+      "skillLevel": "All Levels",
+      "price": 199,
+      "maxCapacity": 16,
+      "location": "N16 Indoor Facility"
+    },
+    {
+      "id": "advanced-training-u14",
+      "name": "Advanced Training - U14",
+      "description": "Intensive training for players ages 11-14 looking to elevate their game. Position-specific training, tactical awareness, 1v1 moves, and competitive match play to prepare for travel and club teams.",
+      "dates": "March 3 - April 11, 2025",
+      "time": "6:30 PM - 8:00 PM",
+      "ages": "11-14",
+      "skillLevel": "Intermediate to Advanced",
+      "price": 249,
+      "maxCapacity": 14,
+      "location": "N16 Indoor Facility"
+    },
+    {
+      "id": "private-sessions",
+      "name": "Private 1-on-1 Training",
+      "description": "Personalized one-on-one sessions tailored to your player's specific needs. Accelerate development with focused attention on weaknesses and building on strengths. Flexible scheduling available.",
+      "dates": "Available Year-Round",
+      "time": "By Appointment",
+      "ages": "6-16",
+      "skillLevel": "All Levels",
+      "price": 75,
+      "maxCapacity": 1,
+      "location": "N16 Indoor Facility"
+    },
+    {
+      "id": "summer-camp-2025",
+      "name": "Summer Soccer Camp 2025",
+      "description": "Full-day summer camp experience packed with drills, skills challenges, scrimmages, and team-building activities. Indoor turf means no weather cancellations. Snacks and camp shirt included.",
+      "dates": "June 9 - June 13, 2025",
+      "time": "9:00 AM - 3:00 PM",
+      "ages": "7-14",
       "skillLevel": "All Levels",
       "price": 299,
       "maxCapacity": 24,
-      "location": "Champions Field A"
-    },
-    {
-      "id": "summer-elite-u14",
-      "name": "Summer Elite Camp - U14",
-      "description": "Advanced training camp for players ages 11-14. Tactical development, position-specific training, and competitive match play to prepare for travel and club teams.",
-      "dates": "June 16 - June 27, 2025",
-      "time": "1:00 PM - 4:00 PM",
-      "ages": "11-14",
-      "skillLevel": "Intermediate to Advanced",
-      "price": 349,
-      "maxCapacity": 20,
-      "location": "Champions Field B"
-    },
-    {
-      "id": "goalkeeper-intensive",
-      "name": "Goalkeeper Intensive",
-      "description": "Specialized goalkeeper training with former professional keepers. Diving technique, distribution, positioning, and shot-stopping drills.",
-      "dates": "July 7 - July 11, 2025",
-      "time": "9:00 AM - 1:00 PM",
-      "ages": "9-16",
-      "skillLevel": "All Levels",
-      "price": 249,
-      "maxCapacity": 12,
-      "location": "Champions Field A"
-    },
-    {
-      "id": "fall-skills-clinic",
-      "name": "Fall Skills Clinic",
-      "description": "Weekly evening sessions focused on technical skill development. Perfect for players looking to sharpen their game during the fall season.",
-      "dates": "September 8 - October 17, 2025",
-      "time": "5:30 PM - 7:00 PM",
-      "ages": "8-15",
-      "skillLevel": "All Levels",
-      "price": 199,
-      "maxCapacity": 30,
-      "location": "Champions Field A & B"
+      "location": "N16 Indoor Facility"
     }
   ],
   "testimonials": [
     {
-      "name": "Sarah M.",
+      "name": "Marcus D.",
       "role": "Parent",
-      "text": "My son attended the summer camp last year and his confidence on the field completely transformed. The coaches are incredible and truly care about each player's development.",
+      "text": "My son has improved so much since starting at N16. The indoor facility is great and the coach really knows how to connect with the kids. You can see the confidence building every week.",
       "rating": 5
     },
     {
-      "name": "Coach Rivera",
-      "role": "Local Club Director",
-      "text": "I've seen players come out of Elite Soccer Academy camps with noticeably improved technical skills. Their coaching methodology is top-tier.",
+      "name": "Jessica R.",
+      "role": "Parent",
+      "text": "Both of my daughters train here and absolutely love it. The small group sizes mean they get real attention. Best soccer training in the Quad Cities area, hands down.",
       "rating": 5
     },
     {
-      "name": "James T.",
+      "name": "Tommy W.",
       "role": "Parent",
-      "text": "Both my daughters have attended multiple camps here. The staff creates a welcoming, challenging environment. Worth every penny.",
+      "text": "The private sessions have been a game-changer for my son. He went from riding the bench to starting on his travel team. Coach pushes the kids but keeps it fun.",
       "rating": 5
     }
   ],
   "features": [
     {
-      "title": "USSF Licensed Coaches",
-      "description": "All our coaches hold USSF licenses and have professional playing or coaching experience.",
-      "icon": "award"
+      "title": "Indoor Turf Facility",
+      "description": "Train year-round on professional indoor turf. No weather cancellations, no mud, no excuses — just pure soccer development.",
+      "icon": "warehouse"
     },
     {
-      "title": "Small Group Sizes",
-      "description": "We maintain low player-to-coach ratios to ensure personalized attention for every athlete.",
+      "title": "Small Group Training",
+      "description": "Low player-to-coach ratios ensure every athlete gets personalized attention and maximum touches on the ball.",
       "icon": "users"
     },
     {
-      "title": "Age-Appropriate Training",
-      "description": "Curriculum designed specifically for each age group following US Soccer development guidelines.",
+      "title": "All Ages & Levels",
+      "description": "Programs designed for players ages 6-16, from beginners learning the basics to advanced players preparing for travel teams.",
       "icon": "target"
     },
     {
-      "title": "Safe & Inclusive",
-      "description": "Background-checked staff, certified athletic trainers on-site, and a welcoming environment for all players.",
-      "icon": "shield-check"
+      "title": "Proven Results",
+      "description": "Our players consistently improve their technical skills, game intelligence, and confidence on the field.",
+      "icon": "trophy"
     }
   ],
   "registration": {
     "enabled": true,
-    "waiverText": "I, the undersigned parent/guardian, hereby grant permission for my child to participate in Elite Soccer Academy programs. I understand that soccer involves inherent risks including but not limited to sprains, fractures, and other injuries. I agree to hold harmless Elite Soccer Academy, its coaches, staff, and volunteers from any claims arising from participation. I confirm that the medical information provided is accurate and authorize emergency medical treatment if needed. I grant permission for my child's likeness to be used in promotional materials. This waiver is valid for the duration of the registered program.",
+    "waiverText": "I, the undersigned parent/guardian, hereby grant permission for my child to participate in N16 Soccer Training programs. I understand that soccer involves inherent risks including but not limited to sprains, fractures, and other injuries. I agree to hold harmless N16 Soccer Training, its coaches, staff, and volunteers from any claims arising from participation. I confirm that the medical information provided is accurate and authorize emergency medical treatment if needed. I grant permission for my child's likeness to be used in promotional materials. This waiver is valid for the duration of the registered program.",
     "requiredFields": {
       "parent": ["firstName", "lastName", "email", "phone", "address", "city", "state", "zip"],
       "player": ["firstName", "lastName", "dateOfBirth", "age", "gender", "skillLevel", "medicalConditions", "allergies", "medications"],
@@ -134,12 +146,12 @@
     }
   },
   "admin": {
-    "password": "admin123",
-    "email": "admin@elitesocceracademy.com"
+    "password": "n16admin2025",
+    "email": "admin@n16soccertraining.com"
   },
   "seo": {
-    "title": "Elite Soccer Academy | Premier Youth Soccer Camps in Austin, TX",
-    "description": "Top-rated youth soccer training camps in Austin, Texas. USSF-licensed coaches, small group sizes, and age-appropriate curriculum for players ages 7-16.",
-    "keywords": ["soccer camp", "youth soccer", "Austin TX", "soccer training", "kids soccer camp"]
+    "title": "N16 Soccer Training | Indoor Youth Soccer in East Moline, IL",
+    "description": "Elite indoor youth soccer training in East Moline, Illinois. Small group sessions, private training, and summer camps for players ages 6-16. Train year-round on professional indoor turf.",
+    "keywords": ["soccer training", "youth soccer", "East Moline IL", "indoor soccer", "Quad Cities soccer", "soccer camp", "private soccer training", "kids soccer"]
   }
 }

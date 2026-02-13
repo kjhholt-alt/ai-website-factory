@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { verifyAdmin } from "@/lib/admin-auth";
+import { siteConfig } from "@/lib/site-config";
 
 export async function GET(req: NextRequest) {
   if (!verifyAdmin(req)) {
@@ -76,7 +77,7 @@ export async function POST(req: NextRequest) {
               <h2>${subject}</h2>
               <div>${body.replace(/\n/g, "<br/>")}</div>
               <hr style="margin-top: 30px;"/>
-              <p style="color: #666; font-size: 12px;">This message was sent by Elite Soccer Academy.</p>
+              <p style="color: #666; font-size: 12px;">This message was sent by ${siteConfig.businessName}.</p>
             </div>`,
           });
         }

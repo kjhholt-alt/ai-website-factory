@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Trophy,
@@ -8,6 +9,7 @@ import {
   Users,
   Target,
   ShieldCheck,
+  Warehouse,
   Star,
   Calendar,
   Clock,
@@ -34,6 +36,8 @@ const iconMap: Record<string, React.ReactNode> = {
   users: <Users className="w-6 h-6" />,
   target: <Target className="w-6 h-6" />,
   "shield-check": <ShieldCheck className="w-6 h-6" />,
+  trophy: <Trophy className="w-6 h-6" />,
+  warehouse: <Warehouse className="w-6 h-6" />,
 };
 
 const fadeUp = {
@@ -55,51 +59,74 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-background" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={stagger}
-            className="max-w-3xl"
-          >
-            <motion.div variants={fadeUp} transition={{ duration: 0.5 }}>
-              <Badge
-                variant="secondary"
-                className="mb-4 px-3 py-1 text-xs font-medium"
-              >
-                <Trophy className="w-3 h-3 mr-1" />
-                Summer 2025 Registration Open
-              </Badge>
-            </motion.div>
-            <motion.h1
-              variants={fadeUp}
-              transition={{ duration: 0.5 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6"
-            >
-              {siteConfig.tagline}
-            </motion.h1>
-            <motion.p
-              variants={fadeUp}
-              transition={{ duration: 0.5 }}
-              className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8 max-w-2xl"
-            >
-              {siteConfig.description}
-            </motion.p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
-              variants={fadeUp}
-              transition={{ duration: 0.5 }}
-              className="flex flex-col sm:flex-row gap-4"
+              initial="hidden"
+              animate="visible"
+              variants={stagger}
             >
-              <Button size="lg" asChild>
-                <Link href="/register">
-                  Register Now
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href="#programs">View Programs</Link>
-              </Button>
+              <motion.div variants={fadeUp} transition={{ duration: 0.5 }}>
+                <Badge
+                  variant="secondary"
+                  className="mb-4 px-3 py-1 text-xs font-medium"
+                >
+                  <Trophy className="w-3 h-3 mr-1" />
+                  Now Enrolling — Spring 2025
+                </Badge>
+              </motion.div>
+              <motion.h1
+                variants={fadeUp}
+                transition={{ duration: 0.5 }}
+                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6"
+              >
+                {siteConfig.tagline}
+              </motion.h1>
+              <motion.p
+                variants={fadeUp}
+                transition={{ duration: 0.5 }}
+                className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8 max-w-2xl"
+              >
+                {siteConfig.description}
+              </motion.p>
+              <motion.div
+                variants={fadeUp}
+                transition={{ duration: 0.5 }}
+                className="flex flex-col sm:flex-row gap-4"
+              >
+                <Button size="lg" asChild>
+                  <Link href="/register">
+                    Register Now
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Link>
+                </Button>
+                <Button size="lg" variant="outline" asChild>
+                  <Link href="#programs">View Programs</Link>
+                </Button>
+              </motion.div>
             </motion.div>
-          </motion.div>
+
+            {/* Hero Image */}
+            {siteConfig.gallery && siteConfig.gallery.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7, delay: 0.3 }}
+                className="hidden lg:block"
+              >
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary/10 border border-border">
+                  <Image
+                    src={siteConfig.gallery[0].src}
+                    alt={siteConfig.gallery[0].alt}
+                    width={600}
+                    height={400}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+                </div>
+              </motion.div>
+            )}
+          </div>
         </div>
       </section>
 
@@ -164,8 +191,61 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Coach Section */}
+      {siteConfig.coach && (
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={stagger}
+              className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+            >
+              <motion.div
+                variants={fadeUp}
+                transition={{ duration: 0.5 }}
+                className="flex justify-center"
+              >
+                <div className="relative w-72 h-72 sm:w-80 sm:h-80 rounded-2xl overflow-hidden border-2 border-primary/20 shadow-xl shadow-primary/10">
+                  <Image
+                    src={siteConfig.coach.image}
+                    alt={siteConfig.coach.name}
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
+              </motion.div>
+              <motion.div variants={fadeUp} transition={{ duration: 0.5 }}>
+                <Badge
+                  variant="secondary"
+                  className="mb-4 px-3 py-1 text-xs font-medium"
+                >
+                  Meet Your Coach
+                </Badge>
+                <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
+                  {siteConfig.coach.name}
+                </h2>
+                <p className="text-primary font-medium mb-4">
+                  {siteConfig.coach.title}
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  {siteConfig.coach.bio}
+                </p>
+                <Button asChild variant="outline">
+                  <Link href="#programs">
+                    View Programs
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Link>
+                </Button>
+              </motion.div>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
       {/* Programs Section */}
-      <section id="programs" className="py-20">
+      <section id="programs" className="py-20 bg-secondary/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -186,8 +266,8 @@ export default function HomePage() {
               transition={{ duration: 0.5 }}
               className="text-muted-foreground max-w-2xl mx-auto"
             >
-              Choose the perfect program for your player. All camps include
-              professional coaching, a camp jersey, and end-of-camp awards.
+              Choose the perfect program for your player. All sessions include
+              professional coaching in our indoor turf facility.
             </motion.p>
           </motion.div>
 
@@ -244,15 +324,17 @@ export default function HomePage() {
                       <Badge variant="outline" className="text-xs">
                         {service.skillLevel}
                       </Badge>
-                      <span className="text-xs text-muted-foreground ml-2">
-                        Max {service.maxCapacity} players
-                      </span>
+                      {service.maxCapacity > 1 && (
+                        <span className="text-xs text-muted-foreground ml-2">
+                          Max {service.maxCapacity} players
+                        </span>
+                      )}
                     </div>
                   </CardContent>
                   <CardFooter>
                     <Button asChild className="w-full">
                       <Link href={`/register?service=${service.id}`}>
-                        Register for This Camp
+                        Register for This Program
                         <ChevronRight className="w-4 h-4 ml-1" />
                       </Link>
                     </Button>
@@ -263,6 +345,60 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Gallery Section */}
+      {siteConfig.gallery && siteConfig.gallery.length > 1 && (
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={stagger}
+              className="text-center mb-12"
+            >
+              <motion.h2
+                variants={fadeUp}
+                transition={{ duration: 0.5 }}
+                className="text-3xl sm:text-4xl font-bold text-foreground mb-4"
+              >
+                Training in Action
+              </motion.h2>
+              <motion.p
+                variants={fadeUp}
+                transition={{ duration: 0.5 }}
+                className="text-muted-foreground max-w-2xl mx-auto"
+              >
+                See our athletes developing their skills at our indoor facility.
+              </motion.p>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={stagger}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+            >
+              {siteConfig.gallery.slice(1).map((img, i) => (
+                <motion.div
+                  key={i}
+                  variants={fadeUp}
+                  transition={{ duration: 0.5 }}
+                  className="relative aspect-[4/3] rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-colors"
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       {/* Testimonials Section */}
       <section className="py-20 bg-secondary/20">
@@ -303,7 +439,7 @@ export default function HomePage() {
                         (_, j) => (
                           <Star
                             key={j}
-                            className="w-4 h-4 fill-yellow-500 text-yellow-500"
+                            className="w-4 h-4 fill-primary text-primary"
                           />
                         )
                       )}
@@ -370,9 +506,12 @@ export default function HomePage() {
                     <Phone className="w-5 h-5" />
                   </div>
                   <p className="text-sm font-medium text-foreground">Phone</p>
-                  <p className="text-sm text-muted-foreground">
+                  <a
+                    href={`tel:${siteConfig.contactInfo.phone}`}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
                     {siteConfig.contactInfo.phone}
-                  </p>
+                  </a>
                 </CardContent>
               </Card>
             </motion.div>
@@ -384,9 +523,12 @@ export default function HomePage() {
                     <Mail className="w-5 h-5" />
                   </div>
                   <p className="text-sm font-medium text-foreground">Email</p>
-                  <p className="text-sm text-muted-foreground">
+                  <a
+                    href={`mailto:${siteConfig.contactInfo.email}`}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
                     {siteConfig.contactInfo.email}
-                  </p>
+                  </a>
                 </CardContent>
               </Card>
             </motion.div>
@@ -400,9 +542,14 @@ export default function HomePage() {
                   <p className="text-sm font-medium text-foreground">
                     Location
                   </p>
-                  <p className="text-sm text-muted-foreground">
+                  <a
+                    href={siteConfig.contactInfo.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
                     {siteConfig.contactInfo.address}
-                  </p>
+                  </a>
                 </CardContent>
               </Card>
             </motion.div>
@@ -420,11 +567,10 @@ export default function HomePage() {
             <Card className="max-w-2xl mx-auto bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20">
               <CardContent className="pt-8 pb-8">
                 <h3 className="text-2xl font-bold text-foreground mb-2">
-                  Ready to Join?
+                  Ready to Train?
                 </h3>
                 <p className="text-muted-foreground mb-6">
-                  Spots fill up fast. Secure your player&apos;s spot in our
-                  next camp today.
+                  Spots are limited. Secure your player&apos;s spot today.
                 </p>
                 <Button size="lg" asChild>
                   <Link href="/register">

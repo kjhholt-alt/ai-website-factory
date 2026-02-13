@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Trophy, Menu, X } from "lucide-react";
@@ -27,11 +28,21 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
-              <Trophy className="w-5 h-5 text-primary-foreground" />
-            </div>
+            {siteConfig.logo.image ? (
+              <Image
+                src={siteConfig.logo.image}
+                alt={`${siteConfig.businessName} logo`}
+                width={40}
+                height={40}
+                className="w-10 h-10 object-contain"
+              />
+            ) : (
+              <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
+                <Trophy className="w-5 h-5 text-primary-foreground" />
+              </div>
+            )}
             <span className="text-lg font-bold text-foreground">
-              {siteConfig.logo.text}
+              {siteConfig.businessName}
             </span>
           </Link>
 

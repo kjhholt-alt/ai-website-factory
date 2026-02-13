@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { fullRegistrationSchema } from "@/lib/schemas";
+import { siteConfig } from "@/lib/site-config";
 
 export async function POST(req: NextRequest) {
   try {
@@ -106,7 +107,7 @@ async function sendConfirmationEmail(registration: {
     subject: `Registration Confirmed - ${registration.serviceName}`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <div style="background: #16a34a; padding: 20px; text-align: center; border-radius: 8px 8px 0 0;">
+        <div style="background: ${siteConfig.branding.primaryColor}; padding: 20px; text-align: center; border-radius: 8px 8px 0 0;">
           <h1 style="color: white; margin: 0;">Registration Confirmed!</h1>
         </div>
         <div style="padding: 30px; background: #f9fafb; border-radius: 0 0 8px 8px;">
@@ -117,9 +118,9 @@ async function sendConfirmationEmail(registration: {
             <p style="margin: 5px 0;"><strong>Program:</strong> ${registration.serviceName}</p>
             <p style="margin: 5px 0;"><strong>Amount Due:</strong> $${registration.totalAmount}</p>
           </div>
-          <p>We will be in touch with additional details about the camp, including what to bring, drop-off/pick-up times, and more.</p>
+          <p>We will be in touch with additional details, including what to bring and session times.</p>
           <p>If you have any questions, please don't hesitate to contact us.</p>
-          <p>Best regards,<br/>Elite Soccer Academy</p>
+          <p>Best regards,<br/>${siteConfig.businessName}</p>
         </div>
       </div>
     `,
