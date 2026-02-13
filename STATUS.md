@@ -54,14 +54,24 @@
 ## Deployment
 
 - **Platform**: Vercel
-- **GitHub**: kjhholt-alt/website-factory
-- **Domain**: TBD (currently on Vercel subdomain)
+- **GitHub**: kjhholt-alt/ai-website-factory
+- **Live URL**: https://website-factory-gamma.vercel.app
+- **Verified**: 2026-02-13 (Puppeteer — all pages render correctly)
+
+## Puppeteer Verification (2026-02-13)
+
+| Page | Status | Notes |
+|------|--------|-------|
+| Homepage | PASS | Hero, coach, programs, gallery, testimonials, contact, CTA, footer all render |
+| /register | PASS | 6-step form, gold step indicators, all 4 programs with pricing |
+| /admin | PASS | Login page with gold Sign In button, lock icon |
+| /terms | PASS | Title: "Terms of Service \| N16 Soccer Training" |
+| /privacy | PASS | Title: "Privacy Policy \| N16 Soccer Training" |
 
 ## Next Steps
 
-1. Deploy to Vercel
-2. Get real phone number and email from client
-3. Set RESEND_API_KEY for confirmation emails
-4. Configure custom domain when ready
-5. Get real testimonials from parents
-6. Update program dates/times as client confirms schedule
+1. Get real phone number and email from client
+2. Set RESEND_API_KEY for confirmation emails
+3. Configure custom domain when ready
+4. Get real testimonials from parents
+5. Update program dates/times as client confirms schedule
